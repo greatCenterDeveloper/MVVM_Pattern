@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
+        android:background="@drawable/bg_mvvm"
         tools:context=".MainActivity">
 
         <!-- 1) 서버 URL 데이터와 바인딩하는 이미지뷰 -->
@@ -29,7 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="change image"
-            android:onClick="@{v->vm.changeImage()}"/>
+            android:textColor="@color/black"
+            android:onClick="@{v->vm.changeImage()}"
+            android:backgroundTint="@color/material_dynamic_tertiary95"/>
 
         <!-- 2) 리사이클러뷰에 대량의 데이터(List or Array) 바인딩하는 custom 속성 지정 -->
         <androidx.recyclerview.widget.RecyclerView
@@ -37,12 +40,15 @@
             android:layout_height="300dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
-            app:itemList="@{vm.items}"/>
+            app:itemList="@{vm.items}"
+            android:background="@drawable/bg_recycler"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="add item"
-            android:onClick="@{v->vm.addItem()}"/>
+            android:textColor="@color/black"
+            android:onClick="@{v->vm.addItem()}"
+            android:backgroundTint="@color/material_dynamic_tertiary95"/>
     </LinearLayout>
 </layout>
